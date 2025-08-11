@@ -13,3 +13,30 @@ function verificarAmigos(){
     amigos.push(nome)
     input.value = '';
     }
+
+function atualizarLista(){
+    let lista = document.getElementById('listaAmigos');
+    lista.innerHTML = '';
+
+    amigos.forEach(amigo => {
+        let li = document.createElement ('li');
+        li.textContent = amigo;
+        lista.appendChild (li);
+    });
+}
+
+function sortearAmigo(){
+    if(amigos.length === 0){
+        alert('Adicione pelo menos um amigo antes de sortear.')
+        return;
+    }
+
+    let indiceSorteado = Math.floor(Math.tandom() * amigos.length);
+    let amigoSorteado = amigos[indiceSorteado];
+
+    let resultado = document.getElementById('resultado');
+    resultado.innerHTML - `<li>${amigoSorteado}</li>`;
+}
+
+
+
