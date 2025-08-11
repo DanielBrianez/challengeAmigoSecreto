@@ -10,19 +10,31 @@ function verificarAmigos(){
         return;
     }
 
-    amigos.push(nome)
-    input.value = '';
+    if(amigos.includes(nome)){
+        alert('Esse amigo já foi adicionado!');
+        return;
     }
 
-function atualizarLista(){
-    let lista = document.getElementById('listaAmigos');
-    lista.innerHTML = '';
+    amigos.push(nome)
+    input.value = '';
+    atualizarLista();
+    }
 
-    amigos.forEach(amigo => {
-        let li = document.createElement ('li');
-        li.textContent = amigo;
-        lista.appendChild (li);
+function atualizarLista() {
+  let lista = document.getElementById('listaAmigos');
+  lista.innerHTML = '';
+
+  amigos.forEach(amigo => {
+    let li = document.createElement('li');
+    li.textContent = amigo;
+
+    li.addEventListener('click', () => {
+      amigos = amigos.filter(a => a !== amigo);
+      atualizarLista();
     });
+
+    lista.appendChild(li);
+  });
 }
 
 function sortearAmigo(){
@@ -31,11 +43,11 @@ function sortearAmigo(){
         return;
     }
 
-    let indiceSorteado = Math.floor(Math.tandom() * amigos.length);
+    let indiceSorteado = Math.floor(Math.random() * amigos.length);
     let amigoSorteado = amigos[indiceSorteado];
 
     let resultado = document.getElementById('resultado');
-    resultado.innerHTML - `<li>${amigoSorteado}</li>`;
+    resultado.innerHTML = `<li>${amigoSorteado}</li>`;
 }
 
 
