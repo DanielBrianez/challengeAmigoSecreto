@@ -1,6 +1,3 @@
-Perfeito, senhor. Aqui está o **README completo do Projeto Amigo Secreto**, todo no padrão que usamos nos outros READMEs, sem negrito e pronto para GitHub:
-
-````markdown
 # 🎉 Projeto Amigo Secreto 🎁
 
 ## 📝 Descrição
